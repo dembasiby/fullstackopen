@@ -9,18 +9,15 @@ const exercises = {
 };
 
 const Content = () => {
-  const part1 = "Fundamentals of React";
-  const exercises1 = exercises[1];
-  const part2 = "Using props to pass data";
-  const exercises2 = exercises[2];
-  const part3 = "State of a component";
-  const exercises3 = exercises[3];
+  const part1 = { name: "Fundamentals of React", exercises: 10 };
+  const part2 = { name: "Using props to pass data", exercises: 7 };
+  const part3 = { name: "State of a component", exercises: 14 };
 
   return (
     <>
-      <Part part={part1} exercises={exercises1} />
-      <Part part={part2} exercises={exercises2} />
-      <Part part={part3} exercises={exercises3} />
+      <Part part={part1.name} exercises={part1.exercises} />
+      <Part part={part2.name} exercises={part2.exercises} />
+      <Part part={part3.name} exercises={part3.exercises} />
     </>
   );
 };
@@ -30,6 +27,7 @@ const Total = (props) => {
 };
 
 const Part = (props) => {
+  console.log(props);
   return (
     <p>
       {props.part} {props.exercises}
